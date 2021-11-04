@@ -1,0 +1,262 @@
+@import url(https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+@media (max-width: 1279px) {
+  .wrapper {
+    max-width: 85%;
+  }
+}
+@media (max-width: 959px) {
+  .wrapper {
+    max-width: 90%;
+  }
+}
+
+.active {
+  color: green;
+}
+
+nav {
+  width: 100%;
+  max-width: 1280px;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav.products {
+  background-color: #f6f6f6;
+}
+
+ul.nav {
+  display: flex;
+  flex-direction: inline;
+  list-style: none;
+  gap: 2rem;
+}
+ul.nav a.nav-link {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #464646;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  border: 2px solid transparent;
+  padding: 8px 16px;
+  transition: all 50ms ease-in;
+}
+ul.nav a.nav-link:hover {
+  color: #6600fe;
+  border: 2px solid #6600fe;
+  padding: 8px 16px;
+}
+ul.nav a.active {
+  color: #6600fe;
+  border: 2px solid #6600fe;
+  padding: 8px 16px;
+}
+ul.nav i {
+  font-size: 1.3rem;
+  color: #464646;
+}
+ul.nav i:hover {
+  color: #6600fe;
+}
+
+div.line {
+  width: 6rem;
+  height: 4px;
+  background-color: #6600fe;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+div.title h2 {
+  font-size: 2rem;
+  font-family: "Gemunu Libre", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #464646;
+  margin-bottom: 2rem;
+}
+
+div.products {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (max-width: 399px) {
+  div.products {
+    justify-content: center;
+  }
+}
+div.products__box {
+  margin-bottom: 4rem;
+}
+div.products__box img {
+  width: 400px;
+}
+@media (max-width: 959px) {
+  div.products__box img {
+    width: 300px;
+  }
+}
+div.products__box h3 {
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #464646;
+}
+div.products__box p {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: rgba(70, 70, 70, 0.8);
+}
+div.products__box p.price {
+  margin-top: 1rem;
+  color: #6600fe;
+  font-weight: 500;
+}
+div.products__box a {
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #464646;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 1rem;
+  border-radius: 100px;
+}
+div.products__box a:hover {
+  background-color: #6600fe;
+}
+
+body.item--bg {
+  background-color: #f6f6f6;
+}
+
+div.item {
+  display: flex;
+  margin-top: 12vh;
+}
+@media (max-width: 1279px) {
+  div.item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+div.item__image, div.item__content {
+  width: 50%;
+}
+@media (max-width: 1279px) {
+  div.item__image, div.item__content {
+    width: 100%;
+  }
+}
+div.item__image img {
+  max-width: 100%;
+}
+div.item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+div.item__content h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  color: #464646;
+}
+@media (max-width: 959px) {
+  div.item__content h2 {
+    font-size: 2rem;
+  }
+}
+div.item__content h2 span {
+  font-weight: 400;
+}
+div.item__content p {
+  width: 90%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: rgba(70, 70, 70, 0.8);
+  line-height: 1.5rem;
+}
+div.item__content .buy a {
+  display: inline;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #6600fe;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+div.item__content .buy a:hover {
+  background-color: #464646;
+}
+div.item__content .buy p {
+  display: inline;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+div#about,
+div#contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+div#about p,
+div#contact p {
+  width: 60%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: rgba(70, 70, 70, 0.8);
+  line-height: 1.5rem;
+}
+
+p.copy {
+  font-family: "Roboto", sans-serif;
+  color: rgba(70, 70, 70, 0.6);
+  padding: 2rem 0;
+}
+@media (max-width: 1279px) {
+  p.copy {
+    padding: 3rem 0;
+  }
+}

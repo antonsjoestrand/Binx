@@ -1,0 +1,71 @@
+// ---- TITLE TEXT ----
+@mixin title($size: $h1, $color: $white) {
+    font-family: $nunito;
+    font-size: $size;
+    font-weight: $regular-font;
+    color: $color;
+}
+
+@mixin title_small($size: $h3, $color: $white) {
+    font-family: $roboto;
+    font-size: $size;
+    font-weight: $light-font;
+    color: $color;
+}
+
+@mixin paragraph(
+    $size: $text-size,
+    $weight: $light-font,
+    $color: $light-paragraph,
+    $lh: 1.6rem
+) {
+    font-family: $roboto;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    line-height: $lh;
+}
+
+// ---- BUTTON STYLING ----
+@mixin button(
+    $display: inline-block,
+    $size: $nav-size,
+    $weight: $regular-font,
+    $color: $white,
+    $padding: $button-padding
+) {
+    display: $display;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    padding: $button-padding;
+}
+
+// ---- BACKGROUND STYLING ----
+@mixin bg($url, $size: cover, $position: center center) {
+    background-image: url($url);
+    background-size: $size;
+    background-position: $position;
+    background-repeat: no-repeat;
+}
+
+@mixin bg_settings($size: cover, $position: center center) {
+    background-size: $size;
+    background-position: $position;
+    background-repeat: no-repeat;
+}
+
+// ---- PSEUDO ELEMENTS ----
+@mixin pseudo($bg: $primary-color) {
+    content: "";
+    position: absolute;
+    background-color: $bg;
+}
+
+// ---- POSITIONING ----
+@mixin flex($direction: column, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

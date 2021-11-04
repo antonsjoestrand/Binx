@@ -1,0 +1,322 @@
+// _config.scss
+@import "config";
+
+// _mixins.scss
+@import "mixins";
+
+// _breakpoints.scss
+@import "breakpoints";
+
+// ---- FONTS ----
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include media("<desktop") {
+        max-width: 85%;
+    }
+
+    @include media("<tablet") {
+        max-width: 90%;
+    }
+}
+
+.active {
+    color: green;
+}
+
+// ---- NAV ----
+
+nav {
+    width: 100%;
+    max-width: 1280px;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav.products {
+    background-color: $secondary-color;
+}
+
+ul.nav {
+    display: flex;
+    flex-direction: inline;
+    list-style: none;
+    gap: 2rem;
+
+    & a.nav-link {
+        font-family: $roboto;
+        text-transform: uppercase;
+        color: $primary-color;
+        font-size: 1.1rem;
+        font-weight: 500;
+        position: relative;
+        border: 2px solid transparent;
+        padding: 8px 16px;
+        transition: all 50ms ease-in;
+
+        &:hover {
+            color: $accent-color;
+            border: 2px solid $accent-color;
+            padding: 8px 16px;
+        }
+    }
+
+    a.active {
+        color: $accent-color;
+        border: 2px solid $accent-color;
+        padding: 8px 16px;
+    }
+
+    & i {
+        font-size: 1.3rem;
+        color: $primary-color;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
+// h1.logo {
+//     width: 80px;
+//     height: 100%;
+//     background-image: url("../images/logo.svg");
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     text-indent: -9000px;
+// }
+
+// // ---- HERO ----
+
+// div.hero {
+//     width: 100%;
+//     height: 50vh;
+//     background-image: url("../images/bg.jpg");
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     margin-top: 12vh;
+// }
+
+// ---- PRODUCTS ----
+
+div.line {
+    width: 6rem;
+    height: 4px;
+    background-color: $accent-color;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+div.title h2 {
+    font-size: 2rem;
+    font-family: $gem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $primary-color;
+    margin-bottom: 2rem;
+}
+
+div.products {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include media("<phone") {
+        justify-content: center;
+    }
+
+    &__box {
+        margin-bottom: 4rem;
+
+        & img {
+            width: 400px;
+
+            @include media("<tablet") {
+                width: 300px;
+            }
+        }
+
+        & h3 {
+            font-size: 1.2rem;
+            font-family: $roboto;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: $primary-color;
+        }
+
+        & p {
+            font-size: 1rem;
+            font-family: $roboto;
+            color: $light-paragraph;
+        }
+
+        & p.price {
+            margin-top: 1rem;
+            color: $accent-color;
+            font-weight: 500;
+        }
+
+        & a {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: $primary-color;
+            color: #fff;
+            font-weight: 600;
+            margin-top: 1rem;
+            border-radius: 100px;
+
+            &:hover {
+                background-color: $accent-color;
+            }
+        }
+    }
+}
+
+// ---- ITEM ----
+
+body.item--bg {
+    background-color: $secondary-color;
+}
+
+div.item {
+    display: flex;
+    margin-top: 12vh;
+
+    @include media("<desktop") {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__image,
+    &__content {
+        width: 50%;
+
+        @include media("<desktop") {
+            width: 100%;
+        }
+    }
+
+    &__image {
+        & img {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+
+        & h2 {
+            font-family: $roboto;
+            font-size: 2.5rem;
+            color: $primary-color;
+
+            @include media("<tablet") {
+                font-size: 2rem;
+            }
+
+            & span {
+                font-weight: 400;
+            }
+        }
+
+        & p {
+            width: 90%;
+            font-family: $roboto;
+            font-size: 1rem;
+            color: $light-paragraph;
+            line-height: 1.5rem;
+        }
+
+        & .buy {
+            & a {
+                display: inline;
+                font-family: $roboto;
+                font-size: 1rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                background-color: $accent-color;
+                border-radius: 100px;
+                padding: 0.5rem 1rem;
+                color: #fff;
+
+                &:hover {
+                    background-color: $primary-color;
+                }
+            }
+
+            & p {
+                display: inline;
+                font-family: $roboto;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-left: 1rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+// ---- ABOUT ----
+
+div#about,
+div#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+        width: 60%;
+        font-family: $roboto;
+        font-size: 1rem;
+        color: $light-paragraph;
+        line-height: 1.5rem;
+    }
+}
+
+// ---- FOOTER ----
+
+p.copy {
+    font-family: $roboto;
+    color: $footer-text;
+    padding: 2rem 0;
+
+    @include media("<desktop") {
+        padding: 3rem 0;
+    }
+}

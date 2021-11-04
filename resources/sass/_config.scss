@@ -1,0 +1,31 @@
+// ---- COLOR VARIABLES ----
+$primary-color: rgb(70, 70, 70);
+$secondary-color: rgb(246, 246, 246);
+$accent-color: rgb(102, 0, 254);
+
+$light-paragraph: rgba(70, 70, 70, 0.8);
+$footer-text: rgba(70, 70, 70, 0.6);
+$box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+// ---- FONT VARIABLES ----
+$gem: "Gemunu Libre", sans-serif;
+$roboto: "Roboto", sans-serif;
+$light-font: 400;
+$regular-font: 500;
+$bold-font: 700;
+$h1: 3.5rem;
+$h2: 2.2rem;
+$h3: 1.5rem;
+$nav-size: 1.1rem;
+$text-size: 1rem;
+
+// ---- PADDING VARIABLES ----
+$section: 6rem;
+$button-padding: 0.5rem 1rem;
+
+// ---- TRANSITION VARIABLES ----
+$tr100: 100ms ease-in;
+$tr200: 200ms ease-in;
+
+// ---- MIN COLUMN SIZE ----
+$col: 346px;
