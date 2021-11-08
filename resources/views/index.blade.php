@@ -16,7 +16,7 @@
                         <a href="#"><i class="far fa-shopping-bag"></i></a>
                     </div>
                 </div>
-                <img src="/images/highlight.png" alt="Product" />
+                <img src="{{ asset('images/highlight.png') }}" alt="Product" />
             </div>
             <div class="scroll">
                 <div class="scroll__box">
@@ -54,7 +54,7 @@
 
                 <div class="products__box">
                     <div class="products__box__image">
-                        <img src="/images/{{ $product->image }}" alt="Product" />
+                        <img src="{{ asset('images/'.$product->image) }}" alt="Product" />
                     </div>
                     <div class="products__box__content">
                         <h3>{{ $product->name }}</h3>
@@ -78,5 +78,8 @@
             </footer>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
 
 @endsection

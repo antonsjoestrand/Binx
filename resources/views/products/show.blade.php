@@ -4,7 +4,7 @@
 
     <div class="item">
         <div class="item__image">
-            <img src="/images/{{ $product->image }}" alt="Product" />
+            <img src="{{ asset('images/'.$product->image) }}" alt="Product" />
         </div>
 
         <div class="item__content">

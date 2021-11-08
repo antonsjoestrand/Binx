@@ -22,16 +22,10 @@
                         <a class="nav-link" href="{{ route('products.edit',$products[1]->id) }}">Edit</a>
                     </div>
                 </div>
-                <img src="/images/highlight.png" alt="Product" />
+                <img src="{{ asset('images/highlight.png') }}" alt="Product" />
             </div>
             <div class="scroll">
                 <div class="scroll__box">
-                    <div class="scroll__box__bar">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="scroll__box__text">
-                        <p>Scroll</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +54,7 @@
 
                 <div class="products__box">
                     <div class="products__box__image">
-                        <img src="/images/{{ $product->image }}" alt="Product" />
+                        <img src="{{ asset('images/'.$product->image) }}" alt="Product" />
                     </div>
                     <div class="products__box__content">
                         @if ($product->status == 0)

@@ -69,7 +69,7 @@
 
                 <div class="upload">
                     <input type="file" name="image" class="upload-box" placeholder="Image">
-                    <img src="/images/{{ $product->image }}" width="100px">
+                    <img src="{{ asset('images/'.$product->image) }}" width="100px">
                 </div>
             </div>
 

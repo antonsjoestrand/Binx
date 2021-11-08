@@ -71,7 +71,7 @@ div.login-col {
 
 div.login-bg {
     z-index: -2;
-    background-image: url("../../storage/app/images/side-bg.jpg");
+    background-image: url("../../public/images/side-bg.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,7 +99,7 @@ div.login-logo {
         & h1 {
             width: 300px;
             height: 74px;
-            background-image: url("../../storage/app/images/logo_login.svg");
+            background-image: url("../../public/images/logo_login.svg");
             background-position: center center;
             background-repeat: no-repeat;
             text-indent: -9000px;
@@ -109,7 +109,7 @@ div.login-logo {
 
 div.side-bg {
     z-index: -2;
-    background-image: url("../../storage/app/images/side-bg.jpg");
+    background-image: url("../../public/images/side-bg.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -448,7 +448,7 @@ a.logo {
     & h1 {
         width: 140px;
         height: 100%;
-        background-image: url("../../storage/app/images/logo_nav.svg");
+        background-image: url("../../public/images/logo_nav.svg");
         background-position: center center;
         background-repeat: no-repeat;
         text-indent: -9000px;
@@ -612,7 +612,7 @@ div.line {
     & .basket {
         width: 100px;
         height: 100px;
-        background-image: url("../../storage/app/images/bhoop.svg");
+        background-image: url("../../public/images/bhoop.svg");
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
