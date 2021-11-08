@@ -1,0 +1,849 @@
+// ---- CONFIG ----
+@import "config.scss";
+
+// ---- MIXINS ----
+@import "mixins.scss";
+
+// ---- BREAKPOINTS ----
+@import "breakpoints.scss";
+
+// ---- FONTS ----
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;600;700;800;900&family=Roboto:wght@300;400;500;700&family=Zen+Antique&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $secondary-color;
+}
+
+.wrapper-wide {
+    max-width: 1540px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+
+    @include media("<desktop") {
+        max-width: 85%;
+    }
+
+    @include media("<tablet") {
+        max-width: 90%;
+    }
+}
+
+// ---- SIDE BACKGROUND ----
+
+div.side-col {
+    width: 240px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include media("<1450px") {
+        display: none;
+    }
+}
+
+div.brand {
+    width: 40%;
+    position: relative;
+}
+
+div.login-col {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+div.login-bg {
+    z-index: -2;
+    background-image: url("../../storage/app/images/side-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div.login-bg-cover {
+    z-index: -1;
+    background-color: $primary-color;
+    opacity: 0.94;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.login-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    a.logo-l {
+        display: inline-block;
+        width: 300px;
+
+        & h1 {
+            width: 300px;
+            height: 74px;
+            background-image: url("../../storage/app/images/logo_login.svg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            text-indent: -9000px;
+        }
+    }
+}
+
+div.side-bg {
+    z-index: -2;
+    background-image: url("../../storage/app/images/side-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div.side-bg-cover {
+    z-index: -1;
+    background-color: $primary-color;
+    opacity: 0.94;
+}
+
+// ---- LOGIN, REGISTER, CRUD ----
+
+div.login-container {
+    width: 100%;
+    display: flex;
+}
+
+div.form {
+    width: 60%;
+    height: 100vh;
+    @include flex();
+
+    & form {
+        width: 400px;
+
+        & h2 {
+            font-family: $zen;
+            font-size: 3.6rem;
+            line-height: 3.6rem;
+            color: $primary-color;
+            padding-bottom: 2rem;
+        }
+
+        & p {
+            font-family: $roboto;
+            font-size: 1.2rem;
+            color: $light-paragraph;
+            padding-bottom: 1.5rem;
+        }
+
+        & .invalid-feedback {
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: $primary-color;
+            color: $accent-color;
+        }
+
+        & .form-group {
+            padding-bottom: 1.2rem;
+
+            & label {
+                font-family: $roboto;
+                font-size: 1rem;
+                color: $primary-color;
+                font-weight: 500;
+            }
+
+            & .form-group-row {
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                & a {
+                    font-family: $roboto;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    color: $light-paragraph;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            & input[type="email"],
+            input[type="password"],
+            input[type="text"] {
+                width: 80%;
+                height: 34px;
+                margin-top: 0.5rem;
+                border: 1px solid $light-border;
+                outline: none;
+                padding-left: 10px;
+                color: $primary-color;
+                transition: 100ms all ease-in;
+
+                &:focus {
+                    border: 1px solid $primary-color;
+                    box-shadow: $box-shadow;
+                }
+            }
+
+            & input[type="checkbox"] {
+                cursor: pointer;
+            }
+
+            & label.form-check-label {
+                font-size: 0.9rem;
+                font-weight: 400;
+                padding-left: 5px;
+                color: $light-paragraph;
+            }
+
+            & button {
+                width: 80%;
+                font-family: $roboto;
+                font-size: 1rem;
+                font-weight: 500;
+                background-color: $primary-color;
+                border: none;
+                color: $accent-color;
+                cursor: pointer;
+                padding: 0.5rem;
+
+                &:hover {
+                    background-color: $primary-color-hover;
+                }
+            }
+        }
+
+        & .register {
+            & p {
+                font-size: 0.9rem;
+            }
+
+            & a {
+                color: $primary-color;
+                font-weight: 500;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+div.crud {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 4rem;
+
+    & form {
+        width: 500px;
+
+        & .form-group {
+            & input[type="text"],
+            button {
+                width: 100%;
+            }
+
+            & input[type="file"]::file-selector-button {
+                border-radius: 3px;
+                color: $accent-color;
+                background-color: $primary-color;
+                border: none;
+                padding: 6px 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $primary-color-hover;
+                }
+            }
+
+            & button {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    & a {
+        margin-bottom: 1.5rem;
+    }
+
+    & h2 {
+        font-family: $zen;
+        font-size: 2rem;
+        line-height: 3.6rem;
+        color: $primary-color;
+        padding-bottom: 1.5rem;
+    }
+
+    & .form-editor {
+        padding-bottom: 1.2rem;
+
+        & label {
+            font-family: $roboto;
+            font-size: 1rem;
+            color: $primary-color;
+            font-weight: 500;
+        }
+
+        & .editor {
+            padding-top: 0.5rem;
+        }
+    }
+
+    & input[type="file"] {
+        padding-top: 0.5rem;
+    }
+
+    & .upload {
+        @include flex($direction: row, $justify: flex-start);
+    }
+
+    & .status {
+        padding-top: 0.5rem;
+
+        & span {
+            font-family: $roboto;
+            font-size: 0.9rem;
+            color: $light-paragraph;
+            margin-right: 2px;
+        }
+
+        & .form-control {
+            margin-right: 10px;
+        }
+    }
+}
+
+div.alert {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: $success-color;
+
+    & p {
+        font-family: $roboto;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $accent-color;
+    }
+}
+
+// ---- NAV ----
+
+nav {
+    width: 100%;
+    max-width: 1240px;
+    height: 14vh;
+    @include flex($justify: space-between, $direction: row);
+}
+
+nav.products {
+    background-color: $secondary-color;
+}
+
+a.nav-link {
+    @include button();
+    display: inline-block;
+}
+
+a.dark {
+    color: $accent-color;
+    background-color: $primary-color;
+    border: 2px solid transparent;
+
+    &:hover {
+        background-color: $primary-color-hover;
+    }
+}
+
+a.light {
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    background-color: $accent-color;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+ul.nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 1rem;
+
+    a.shop {
+        position: relative;
+        margin-right: 1rem;
+
+        & i {
+            font-size: 1.8rem;
+            color: $primary-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &:hover {
+                color: $primary-color-hover;
+            }
+        }
+    }
+
+    a.live {
+        margin-right: 1rem;
+    }
+
+    a.configure {
+        margin-right: 1rem;
+    }
+
+    a.icon {
+        position: relative;
+
+        & i {
+            font-size: 1.8rem;
+            color: $primary-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &:hover {
+                color: $primary-color-hover;
+            }
+        }
+    }
+}
+
+a.logo {
+    display: inline-block;
+    width: 140px;
+    margin-left: $side-col;
+
+    @include media("<1450px") {
+        margin-left: 0;
+    }
+
+    & h1 {
+        width: 140px;
+        height: 100%;
+        background-image: url("../../storage/app/images/logo_nav.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        text-indent: -9000px;
+    }
+}
+
+// ---- HERO ----
+
+div.hero {
+    width: 100%;
+    height: 86vh;
+
+    & .highlight {
+        width: 100%;
+        height: 72vh;
+        background-color: $accent-color;
+        box-shadow: $box-shadow;
+        position: relative;
+        @include flex($align: flex-start);
+
+        &__content {
+            width: 70%;
+            padding-left: $side-col;
+            padding-bottom: 1.5rem;
+
+            @include media("<desktop") {
+                width: 100%;
+            }
+
+            & h3 {
+                font-family: $zen;
+                font-size: 3.6rem;
+                line-height: 3.6rem;
+                color: $primary-color;
+                padding-bottom: 2rem;
+            }
+
+            & p {
+                width: 68%;
+                font-family: $roboto;
+                font-size: 1.2rem;
+                color: $light-paragraph;
+                line-height: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            & p.price {
+                font-family: $zen;
+                font-size: 2.2rem;
+                color: $primary-color;
+                padding-bottom: 2.2rem;
+            }
+
+            & .actions {
+                & a.nav-link {
+                    @include button();
+                    color: $primary-color;
+                    border: 2px solid $primary-color;
+                    background-color: $secondary-color;
+                    margin-right: 1.4rem;
+
+                    &:hover {
+                        background-color: $accent-color;
+                    }
+                }
+
+                & i {
+                    font-size: 1.4rem;
+                    color: $primary-color;
+
+                    &:hover {
+                        color: $primary-color-hover;
+                    }
+                }
+            }
+        }
+
+        img {
+            width: 640px;
+            position: absolute;
+            top: 54px;
+            right: 80px;
+
+            @include media("<desktop") {
+                display: none;
+            }
+        }
+    }
+
+    & .scroll {
+        width: 100%;
+        height: 14vh;
+
+        &__box {
+            width: 100px;
+            height: 100%;
+            @include flex();
+            position: relative;
+
+            &__bar {
+                width: 40px;
+                height: 60px;
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                border-radius: 80px;
+                position: relative;
+
+                & .dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    background-color: $accent-color;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &__text {
+                font-family: $roboto;
+                font-size: 1rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.4);
+                position: absolute;
+                rotate: 0deg;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -64%;
+            }
+        }
+    }
+}
+
+// ---- COLLECTION ----
+
+div.collection {
+    max-width: 1540px;
+    margin: 0 auto;
+    position: relative;
+}
+
+div.side-panel {
+    background-color: $primary-color;
+    height: 100%;
+    top: 40px;
+    z-index: -2;
+}
+
+div.line {
+    width: 46%;
+    height: 16px;
+    background-color: $primary-color;
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    transform: translateY(-50%);
+    left: 0;
+
+    & .basket {
+        width: 100px;
+        height: 100px;
+        background-image: url("../../storage/app/images/bhoop.svg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -5px;
+        left: 99%;
+        transform: translateY(-50%);
+    }
+}
+
+div.title h2 {
+    font-size: 3rem;
+    font-family: $zen;
+    letter-spacing: 2px;
+    color: $primary-color;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: $side-col;
+}
+
+a.create {
+    margin-bottom: 4rem;
+    margin-left: $side-col;
+}
+
+div.products {
+    width: 100%;
+    max-width: 1280px;
+    @include flex($direction: row);
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include media("<phone") {
+        justify-content: center;
+    }
+
+    &__box {
+        margin-bottom: 2rem;
+        background-color: $accent-color;
+        box-shadow: $box-shadow;
+
+        &__image {
+            width: 400px;
+
+            & img {
+                width: 400px;
+
+                @include media("<tablet") {
+                    width: 300px;
+                }
+            }
+        }
+
+        &__content {
+            width: 400px;
+            padding-top: 2rem;
+            padding-left: 2.2rem;
+            padding-bottom: 3rem;
+            position: relative;
+
+            & .offline {
+                background-color: $danger-color;
+                width: 140px;
+                height: 40px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include flex();
+
+                & p {
+                    color: $accent-color;
+                    margin-top: 14px;
+                }
+            }
+
+            & h3 {
+                font-size: 1.6rem;
+                font-family: $zen;
+                color: $primary-color;
+                padding-bottom: 0.5rem;
+            }
+
+            & p {
+                font-size: 1rem;
+                font-family: $roboto;
+                color: $light-paragraph;
+                padding-bottom: 1rem;
+            }
+
+            & p.price {
+                font-size: 1.4rem;
+                font-family: $zen;
+                color: $primary-color;
+                font-weight: 500;
+                padding-bottom: 1.5rem;
+            }
+
+            & .actions {
+                & a.nav-link {
+                    @include button();
+                    color: $primary-color;
+                    background-color: $secondary-color;
+                    border: 2px solid $primary-color;
+                    margin-right: 1.4rem;
+
+                    &:hover {
+                        background-color: $accent-color;
+                    }
+                }
+
+                & i {
+                    font-size: 1.4rem;
+                    color: $primary-color;
+
+                    &:hover {
+                        color: $primary-color-hover;
+                    }
+                }
+
+                & button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+
+                    & i {
+                        color: $danger-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---- ITEM ----
+
+div.item {
+    display: flex;
+    margin-top: 12vh;
+
+    @include media("<desktop") {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__image,
+    &__content {
+        width: 50%;
+
+        @include media("<desktop") {
+            width: 100%;
+        }
+    }
+
+    &__image {
+        & img {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding-left: 2rem;
+
+        & h2 {
+            font-family: $zen;
+            font-size: 3rem;
+            color: $primary-color;
+
+            @include media("<tablet") {
+                font-size: 2rem;
+            }
+
+            & span {
+                font-weight: 400;
+            }
+        }
+
+        & p {
+            width: 90%;
+            font-family: $roboto;
+            font-size: 1rem;
+            color: $light-paragraph;
+            line-height: 1.8rem;
+        }
+
+        & .buy {
+            & p {
+                display: inline;
+                font-family: $zen;
+                color: $primary-color;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+// ---- ABOUT ----
+
+div#about,
+div#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+        width: 60%;
+        font-family: $roboto;
+        font-size: 1rem;
+        color: $light-paragraph;
+        line-height: 1.5rem;
+    }
+}
+
+// ---- FOOTER ----
+
+footer {
+    width: 100%;
+    @include flex();
+    p.copy {
+        font-family: $roboto;
+        color: $footer-text;
+        padding: 2rem 0;
+
+        @include media("<desktop") {
+            padding: 3rem 0;
+        }
+    }
+}

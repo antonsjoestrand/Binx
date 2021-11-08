@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index', ProductController::class);
+// });
+
+Route::resource('/', ProductController::class);
+
+Route::resource('products', ProductController::class);
+
+Auth::routes();
+
+Route::get('/home', [ProductController::class, 'home'])->name('home');
+Route::get('admin/home', [ProductController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');

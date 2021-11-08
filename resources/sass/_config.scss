@@ -1,15 +1,20 @@
 // ---- COLOR VARIABLES ----
-$primary-color: rgb(70, 70, 70);
-$secondary-color: rgb(246, 246, 246);
-$accent-color: rgb(102, 0, 254);
+$primary-color: rgb(57, 61, 69);
+$secondary-color: rgba(195, 200, 212, 0.25);
+$accent-color: rgb(255, 255, 255);
+$primary-color-hover: rgba(57, 61, 69, 0.8);
+$danger-color: rgb(130, 30, 30);
+$success-color: rgb(50, 80, 60);
 
-$light-paragraph: rgba(70, 70, 70, 0.8);
-$footer-text: rgba(70, 70, 70, 0.6);
-$box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+$light-paragraph: rgba(57, 61, 69, 0.7);
+$footer-text: rgba(57, 61, 69, 0.3);
+$light-border: rgba(57, 61, 69, 0.3);
+$box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
 
 // ---- FONT VARIABLES ----
-$gem: "Gemunu Libre", sans-serif;
+$zen: "Zen Antique", serif;
 $roboto: "Roboto", sans-serif;
+$robotoslab: "Roboto Slab", serif;
 $light-font: 400;
 $regular-font: 500;
 $bold-font: 700;
@@ -21,6 +26,7 @@ $text-size: 1rem;
 
 // ---- PADDING VARIABLES ----
 $section: 6rem;
+$side-col: 140px;
 $button-padding: 0.5rem 1rem;
 
 // ---- TRANSITION VARIABLES ----

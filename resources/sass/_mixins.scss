@@ -27,18 +27,11 @@
 }
 
 // ---- BUTTON STYLING ----
-@mixin button(
-    $display: inline-block,
-    $size: $nav-size,
-    $weight: $regular-font,
-    $color: $white,
-    $padding: $button-padding
-) {
-    display: $display;
-    font-size: $size;
-    font-weight: $weight;
-    color: $color;
-    padding: $button-padding;
+@mixin button() {
+    font-family: $roboto;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 20px;
 }
 
 // ---- BACKGROUND STYLING ----
