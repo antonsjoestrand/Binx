@@ -9,7 +9,7 @@
 
         <div class="item__content">
             <h2>{{ $product->name }}</h2>
-            <p>{{  $product->description }}</p>
+            <p>{!!  $product->description !!}</p>
             <div class="buy">
                 <a class="nav-link dark" href="#">Buy Now</a>
                 <p class="price">&dollar;{{ $product->price }}</p>
